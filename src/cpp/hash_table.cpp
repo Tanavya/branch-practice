@@ -1,4 +1,7 @@
 //  Copyright © 2017 Exun Clan. All rights reserved.
+//  ^Exun clan ko yeh ghuserna zaruri tha??
+//  this is me tanavya, idk github shit smh.
+
 #include "hash_table.hpp"
 
 #include <stdlib.h>
