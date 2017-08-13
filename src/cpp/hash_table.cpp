@@ -1,7 +1,11 @@
+//  Copyright © 2017 Exun Clan. All rights reserved.
 #include "hash_table.hpp"
-#include <iostream>
+
 #include <stdlib.h>
 #include<bits/stdc++.h>
+
+#include <iostream>
+#include <typeinfo>
 
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"
@@ -11,6 +15,10 @@
 #define ANSI_COLOR_CYAN    "\x1b[36m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
+<<<<<<< master
+node *cur, *it, *itx;
+hash_table *n_table, *t;
+=======
 
 /* LIST functions
 
@@ -18,20 +26,21 @@
 	* DELETE
 
 */
+>>>>>>> master
 
 /* Insert an element into a given list
 	* If there is no head, insert element at head position
-		* New node with the (key, value) pair pointing to nothing
-		* Set head and tail of list to new node
-		* Set next element to self
+ * New node with the (key, value) pair pointing to nothing
+ * Set head and tail of list to new node
+ * Set next element to self
 
 	* else, insert element at tail position
-		* Set next of tail to new node with value
-		* set tail to new node
+ * Set next of tail to new node with value
+ * set tail to new node
 
 	PARAM: l --> Pointer to the list
-	        val --> Integer value of the node to be inserted
-*/
+ val --> Integer value of the node to be inserted
+ */
 
 node *cur, *it, *itx;
 hash_table *n_table, *t;
@@ -53,7 +62,7 @@ void list_insert(list* l, int key_n, int value) {
 /* Delete first occurence of an element with the given key from a given list
 	* Find a node s.t the NEXT node has the desired value to delete
 	* Set the "next" of this node to the next of the NEXT node
-*/
+ */
 
 void list_delete(list* l, int k) {
     it = l->head;
@@ -104,23 +113,24 @@ node *list_contains(list *l, int k) {
 	* Creates a new hash table of twice the current size
 	* Re-hashes all keys into table
 	* Returns pointer to new table
-*/
+ */
+
 void grow_table(hash_table *td);
 void shrink_table(hash_table *td);
 
 /* Hash function
 	* Function of KEY and SIZE that must return a valid index into the hash table
 	* PARAMETERS: key --> Key for which to return the hash
-				  s   --> Size of table
-*/
+    s   --> Size of table
+ */
 int hash(int key, int s) {
-    return key%s;
+  return key%s;
 }
 
 /* Whether or not the Hash table contains the given key
-   PARAMETERS: t   --> Pointer to the hash table
-               key --> Key to look for
-*/
+ PARAMETERS: t   --> Pointer to the hash table
+ key --> Key to look for
+ */
 node *hash_contains(hash_table *t, int key) {
     int index = hash(key , t->current_size);
     return list_contains(&t->table[index] , key);
@@ -128,8 +138,8 @@ node *hash_contains(hash_table *t, int key) {
 
 /* Deletes the first occurence of the given key from the hash table if it is present
 	* PARAMETERS: t --> Pointer to the hash table
-				  key --> Key of (key, value) pair to delete
-*/
+ key --> Key of (key, value) pair to delete
+ */
 void hash_delete(hash_table *t, int key) {
     if ( t->nods+1 > t->current_size ) {
         grow_table(t);
@@ -308,4 +318,3 @@ int main() {
     pprint(t);
     return 0;
 }
-
