@@ -2,6 +2,7 @@
 #ifndef HASH_TABLE_H // _BRANCH_PRACTICE_SRC_CPP_HASH_TABLE_HPP
 #define HASH_TABLE_H
 
+
 #define MAXN static_cast<int>(1e6+1)
 
 struct node {

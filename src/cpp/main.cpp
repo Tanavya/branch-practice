@@ -1,6 +1,5 @@
 //  Copyright © 2017 Exun Clan. All rights reserved.
 #include <stdio.h>
-
 #include "hash_table.hpp"
 
 int main() {
