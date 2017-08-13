@@ -15,18 +15,12 @@
 #define ANSI_COLOR_CYAN    "\x1b[36m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
-<<<<<<< master
-node *cur, *it, *itx;
-hash_table *n_table, *t;
-=======
-
 /* LIST functions
 
 	* INSERT
 	* DELETE
 
 */
->>>>>>> master
 
 /* Insert an element into a given list
 	* If there is no head, insert element at head position
